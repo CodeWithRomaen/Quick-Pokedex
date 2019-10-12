@@ -1,0 +1,165 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    /* border: 1px solid green; */
+    width: 100vw;
+    min-height: 100vh;
+    padding-bottom: 20px;
+    background: #D46666;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.title {
+    /* border: 1px dashed blue; */
+    width: 700px;
+    min-height: 120px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+.pokedex {
+    /* border: 1px dashed green; */
+    width: 700px;
+    min-height: 600px;
+    border-radius: 10px;
+    /* box-shadow: 0 0 10px rgb(109, 105, 105); */
+
+    background: white;
+
+    display: flex;
+}
+.section-1 {
+    /* border: 1px solid black; */
+    width: 300px;
+    min-height: 600px;
+}
+.search {
+    /* border: 1px dashed green; */
+    width: 300px;
+    height: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar {
+    background: #F6F6F6;
+    border: 1px solid #DDDDDD;
+    border-radius: 20px;
+
+    min-height: 40px;
+}
+
+form {
+    min-height: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search-bar input {
+    font-size: 15px;
+    font-weight: bold;
+    background: none;
+    border: none;
+    padding-left: 20px;
+    color: #BFBFBF;
+
+    width: 200px;
+    height: 30px;
+}
+.search-bar button {
+    margin-right: 20px;
+    background: none;
+    border: none;
+}
+
+.search-bar button:hover {
+    cursor: pointer;
+}
+
+
+.info {
+    /* border: 1px dashed green; */
+    width: 300px;
+    height: 300px;
+    padding-left: 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.section-2 {
+    /* border: 1px solid black; */
+    width: 400px;
+    min-height: 600px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    border: 1px solid #DDDDDD;
+    border-radius: 10px;
+
+    width: 90%;
+    height: 540px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+    .title {
+        width: 90vw
+    }
+
+    .pokedex {
+        width: 90vw;
+
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section-1 {
+        width: 80vw;
+        min-height: auto;
+    }
+
+    .search {
+        width: 80vw;
+    }
+
+    .search-bar input {
+        width: auto;
+        min-width: 60vw;
+    }
+
+
+    .info {
+        width: 80vw;
+        height: auto;
+        min-height: 300px;
+    }
+
+    .section-2 {
+        width: 80vw;
+    }
+
+    .card {
+        width: 90vw;
+    }
+}
