@@ -1,0 +1,1 @@
+// poke api : https://pokeapi.co/api/v2/pokemon/{pokemon name} -> name, id, type, weight
