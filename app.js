@@ -79,6 +79,14 @@ function watchForm() {
         fetchData(searchForm.value);    //sending searched item to fetchData function to get the data
         searchForm.value = '';
     });
+
+    searchButton.addEventListener('touchstart', function(event) {
+        event.preventDefault();
+        
+        clearData();
+        fetchData(searchForm.value);    //sending searched item to fetchData function to get the data
+        searchForm.value = '';
+    });
 }
 
 
