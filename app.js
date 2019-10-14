@@ -43,11 +43,17 @@ function fetchData(data) {
 
     fetch(url)
     .then(function(response) {
-        return response.json();
+        if(response.status !== 200) {
+            notFound(); //function when response is 404 or something else
+        }
+        else {
+            return response.json();
+        }
     })
     .then(function(pokemonData) {
         displayData(pokemonData);
     })
+    .catch((err) => {alert('error')})
 }
 
 function clearData() {
