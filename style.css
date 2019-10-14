@@ -103,7 +103,7 @@ form {
 }
 
 
-button {
+.info button {
     border: none;
     background: #D46666;
     color: white;
@@ -114,7 +114,7 @@ button {
     border-radius: 20px;
 }
 
-button:hover {
+.info button:hover {
     background: rgb(202, 89, 89);
     cursor: pointer;
 
