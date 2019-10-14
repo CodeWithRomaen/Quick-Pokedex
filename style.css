@@ -75,15 +75,26 @@ form {
     background: none;
     border: none;
     padding-left: 20px;
-    color: #BFBFBF;
+    color: rgb(109, 109, 109);
 
     width: 200px;
     height: 30px;
 }
+.search-bar input::placeholder {
+    color: #BFBFBF;
+}
+
+.search-bar input:focus {
+    outline-width: 0;
+}
+
 .search-bar button {
     margin-right: 20px;
     background: none;
     border: none;
+}
+.search-bar button:focus {
+    outline-width: 0;
 }
 
 .search-bar button:hover {
