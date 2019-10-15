@@ -38,42 +38,22 @@ function notFound() {
 }
 
 
-// function fetchData(data) {
-//     let url = `https://pokeapi.co/api/v2/pokemon/${data}`;
-
-//     fetch(url, {
-//         method: 'GET',
-//         mode: 'cors',
-//         header : {
-//             'Content-Type': 'application/json'
-//         }
-//     })
-//     .then(function(response) {
-//         if(response.status !== 200) {
-//             notFound(); //function when response is 404 or something else
-//         }
-//         else {
-//             return response.json();
-//         }
-//     })
-//     .then(function(pokemonData) {
-//         displayData(pokemonData);
-//     })
-// }
-
-async function fetchData(data) {
+function fetchData(data) {
     let url = `https://pokeapi.co/api/v2/pokemon/${data}`;
 
-    let response = await fetch(url);
-
-    if(response.status !== 200) {
-        notFound()
-    }
-
-    let pokemonData = await response.json();
-    displayData(pokemonData);
+    fetch(url)
+    .then(function(response) {
+        if(response.status !== 200) {
+            notFound(); //function when response is 404 or something else
+        }
+        else {
+            return response.json();
+        }
+    })
+    .then(function(pokemonData) {
+        displayData(pokemonData);
+    })
 }
-
 
 
 function clearData() {
@@ -95,19 +75,13 @@ function watchForm() {
 
     searchButton.addEventListener('click', function(event) {
         event.preventDefault();
-        
+        event.stopPropagation();
+
         clearData();
         fetchData(searchForm.value);    //sending searched item to fetchData function to get the data
         searchForm.value = '';
     });
 
-    searchButton.addEventListener('touchstart', function(event) {
-        event.preventDefault();
-        
-        clearData();
-        fetchData(searchForm.value);    //sending searched item to fetchData function to get the data
-        searchForm.value = '';
-    });
 }
 
 
