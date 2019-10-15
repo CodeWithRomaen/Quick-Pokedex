@@ -51,7 +51,7 @@ function fetchData(data) {
         }
     })
     .then(function(pokemonData) {
-        alert('mobile alert')
+        alert(pokemonData.name)
         displayData(pokemonData);
     })
 }
