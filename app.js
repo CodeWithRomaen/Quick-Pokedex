@@ -38,29 +38,43 @@ function notFound() {
 }
 
 
-function fetchData(data) {
+// function fetchData(data) {
+//     let url = `https://pokeapi.co/api/v2/pokemon/${data}`;
+
+//     fetch(url, {
+//         method: 'GET',
+//         mode: 'cors',
+//         header : {
+//             'Content-Type': 'application/json'
+//         }
+//     })
+//     .then(function(response) {
+//         if(response.status !== 200) {
+//             notFound(); //function when response is 404 or something else
+//         }
+//         else {
+//             return response.json();
+//         }
+//     })
+//     .then(function(pokemonData) {
+//         displayData(pokemonData);
+//     })
+// }
+
+async function fetchData(data) {
     let url = `https://pokeapi.co/api/v2/pokemon/${data}`;
 
-    fetch(url, {
-        method: 'GET',
-        mode: 'cors',
-        header : {
-            'Content-Type': 'application/json'
-        }
-    })
-    .then(function(response) {
-        if(response.status !== 200) {
-            notFound(); //function when response is 404 or something else
-        }
-        else {
-            return response.json();
-        }
-    })
-    .then(function(pokemonData) {
-        displayData(pokemonData);
-    })
-    .catch((err) => {alert('error')})
+    let response = await fetch(url);
+
+    if(response.status !== 200) {
+        notFound()
+    }
+
+    let pokemonData = await response.json();
+    displayData(pokemonData);
 }
+
+
 
 function clearData() {
     let info = document.querySelector('.info');
