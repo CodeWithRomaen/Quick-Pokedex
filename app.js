@@ -51,7 +51,6 @@ function fetchData(data) {
         }
     })
     .then(function(pokemonData) {
-        alert('pokemon name: ')
         displayData(pokemonData);
     })
 }
