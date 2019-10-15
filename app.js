@@ -41,7 +41,13 @@ function notFound() {
 function fetchData(data) {
     let url = `https://pokeapi.co/api/v2/pokemon/${data}`;
 
-    fetch(url)
+    fetch(url, {
+        method: 'GET',
+        mode: 'cors',
+        header : {
+            'Content-Type': 'application/json'
+        }
+    })
     .then(function(response) {
         if(response.status !== 200) {
             notFound(); //function when response is 404 or something else
