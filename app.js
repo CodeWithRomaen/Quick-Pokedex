@@ -78,7 +78,7 @@ function watchForm() {
         event.stopPropagation();
 
         clearData();
-        fetchData(searchForm.value);    //sending searched item to fetchData function to get the data
+        fetchData(searchForm.value.toLowerCase());    //sending searched item to fetchData function to get the data
         searchForm.value = '';
     });
 
