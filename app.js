@@ -1,6 +1,11 @@
 // poke api : https://pokeapi.co/api/v2/pokemon/{pokemon name} -> name, id, type, weight, height
 
-
+function getHeight(height) {
+    return (parseInt(height,10)/10);
+}
+function getWeight(weight) {
+    return (parseInt(weight,10)/10);
+}
 
 function displayData(data) {
     let info = document.querySelector('.info');
@@ -10,8 +15,8 @@ function displayData(data) {
     info.innerHTML = 
     `<p><b>Pokedex:</b> ${data.id}</p>
     <p><b>Type:</b> ${data.types[0].type.name}</p>
-    <p><b>Height:</b> ${data.height} ft</p>
-    <p><b>Weight:</b> ${data.weight} lbs</p>
+    <p><b>Height:</b> ${getHeight(data.height)} m</p>
+    <p><b>Weight:</b> ${getWeight(data.weight)} lbs</p>
     <a href="https://www.pokemon.com/us/pokedex/${data.name}" target="_blank"><button>MORE</button></a>`
 
     function getImageID(value) {
