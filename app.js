@@ -13,10 +13,10 @@ function displayData(data) {
     let pokemonName = document.querySelector('.name');
 
     info.innerHTML = 
-    `<p><b>Pokedex:</b> ${data.id}</p>
-    <p><b>Type:</b> ${data.types[0].type.name}</p>
-    <p><b>Height:</b> ${getHeight(data.height)} m</p>
-    <p><b>Weight:</b> ${getWeight(data.weight)} lbs</p>
+    `<p><b>Pokedex ID :</b> ${data.id}</p>
+    <p><b>Type :</b> ${data.types[0].type.name.toUpperCase()}</p>
+    <p><b>Height :</b> ${getHeight(data.height)} m</p>
+    <p><b>Weight :</b> ${getWeight(data.weight)} kg</p>
     <a href="https://www.pokemon.com/us/pokedex/${data.name}" target="_blank"><button>MORE</button></a>`
 
     function getImageID(value) {
