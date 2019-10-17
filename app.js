@@ -1,12 +1,24 @@
-// poke api : https://pokeapi.co/api/v2/pokemon/{pokemon name} -> name, id, type, weight, height
 
+// helper functions being used 
 function getHeight(height) {
     return (parseInt(height,10)/10);
 }
 function getWeight(weight) {
     return (parseInt(weight,10)/10);
 }
+function notFound() {
+    let pokemonName = document.querySelector('.name');
+    pokemonName.innerHTML = 
+    ` <p style="font-size: 40px; font-weight:bolder;padding: 10px">NOT FOUND</p>
+      <p style='padding: 10px'>Please check spelling and search again</p>
+    `
+}
 
+
+
+
+
+// function to display the retrieved data to the DOM 
 function displayData(data) {
     let info = document.querySelector('.info');
     let image = document.querySelector('.image');
@@ -34,15 +46,14 @@ function displayData(data) {
     ` <p style="font-size: 42px; font-weight:bolder;">${data.name.toUpperCase()}</p>`
 }
 
-function notFound() {
-    let pokemonName = document.querySelector('.name');
-    pokemonName.innerHTML = 
-    ` <p style="font-size: 40px; font-weight:bolder;padding: 10px">NOT FOUND</p>
-      <p style='padding: 10px'>Please check spelling and search again</p>
-    `
-}
 
 
+
+
+
+
+
+// function to fetch the required data based on given seach input 
 function fetchData(data) {
     let url = `https://pokeapi.co/api/v2/pokemon/${data}`;
 
@@ -61,6 +72,11 @@ function fetchData(data) {
 }
 
 
+
+
+
+
+// function to clear out search field 
 function clearData() {
     let info = document.querySelector('.info');
     let image = document.querySelector('.image');
@@ -70,6 +86,11 @@ function clearData() {
     image.innerHTML = '';
     pokemonName.innerHTML = '';
 }
+
+
+
+
+
 
 // checking to see if search button is triggered
 function watchForm() {
