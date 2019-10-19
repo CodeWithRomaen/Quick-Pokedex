@@ -8,6 +8,6 @@ Link to Application : https://quickpokedex.netlify.com/
 This application is fully responsive. I enjoyed making my own css structure so the application would be adjusted to any viewport.
 Below are some screenshots of the final product.
 
-<img src='img/qp_desktop' width='250px'>
-<img src='img/qp_ipad' width='250px'>
-<img src='img/qp_mobile' width='250px'>
+<img src='img/qp_desktop.png' width='250px'>
+<img src='img/qp_ipad.png' width='250px'>
+<img src='img/qp_mobile.png' width='250px'>
